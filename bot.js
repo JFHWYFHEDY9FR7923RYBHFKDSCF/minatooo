@@ -410,22 +410,9 @@ client.on('message', msg => {
 });
 
 
-client.on('guildDelete', guild => {
-         const embed = new Discord.RichEmbed()
-     .setColor("GOLD")
-     .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=400489866573512705&permissions=8&scope=bot')
-  .setDescription(`**
-   Server kicked Speed Bot :cry:
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`);
-client.channels.get("467833183254347797").sendEmbed(embed)
-});
  
 
-const prefix = ">"
+const prefix = "-"
 client.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(prefix)) return undefined;
@@ -1911,30 +1898,7 @@ client.on('message', message => {
 });
 
 
-client.on('message', message => {
-        if (message.content === "-invite") {
-            if(!message.channel.guild) return;
-        let embed = new Discord.RichEmbed()
-        .setAuthor(` ${message.author.username} `, message.author.avatarURL)      
-        .setTitle(`➡ Click Here `)
-        .setURL(`https://discordapp.com/oauth2/authorize?client_id=400489866573512705&permissions=8&scope=bot`)
-        .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")        
-     message.channel.sendEmbed(embed);
-       }
-   });
-   
-   client.on('message', message => {
-        if (message.content === "-inv") {
-            if(!message.channel.guild) return;
-        let embed = new Discord.RichEmbed()
-        .setAuthor(` ${message.author.username} `, message.author.avatarURL)      
-        .setTitle(`➡ Click Here `)
-        .setURL(`https://discordapp.com/oauth2/authorize?client_id=400489866573512705&permissions=8&scope=bot`)
-        .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")        
-     message.channel.sendEmbed(embed);
-       }
-   });
- 
+
 client.on('message', message => {
     if (message.content.startsWith("-avatar")) {
 if(!message.channel.guild) return;
@@ -1978,7 +1942,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/htNpU3J**")
+  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/RDCsYdN**")
      
      
   message.channel.sendEmbed(embed);
