@@ -45,10 +45,8 @@ if (message.content.startsWith(prefix + 'help')) {
     ✴ -say =====> The Bot Say Any Thing | تكرار اي شي كتبتو
     ✴ -image ===> To Show Image Of Server | لاضهار صورة السيرف 
     ✴ -contact => To Contact Owners Bot | مراسلة صاحب البوت
-    ✴ -invite \ -inv => Invite Bot | لدعوة البوت
     ✴ -embed ===> To Embed | لتكرار اي شي كتبتو بطريقة حلوة
     ✴ -avatar ==> Your Avatar | صورتك الشخصية
-    ✴ -support => Server Support | سيرفر الدعم الفني
      ===========================================================
       React With ▶ To See Admins Commands`,
 	`=-=-=-=-=-= 🔧  Admin Commands - اوامر ادارية 🔧 =-=-=-=-=-=
@@ -392,26 +390,6 @@ client.on('message', msg => {
 }
 });
 
-client.on('message', msg => {
-  if (msg.content.startsWith('-play')) {
-    msg.channel.send('Use >play');
-  }
-});
-
-			  
-client.on('guildCreate', guild => {
-         const embed = new Discord.RichEmbed()
-     .setColor("RED")
-     .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=400489866573512705&permissions=8&scope=bot')
-  .setDescription(`**
-  New Server Add Speed Bot ✅
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`);
-client.channels.get("467833183254347797").sendEmbed(embed)
-});
 
 client.on('guildDelete', guild => {
          const embed = new Discord.RichEmbed()
@@ -1228,7 +1206,7 @@ if (!points[message.author.id]) points[message.author.id] = {
     message.channel.send(`**Sorry, Please Wait ${pretty(r, {verbose:true})}...**`).then(m => m.delete(5000));
     return;
     }
-    if ( message.content == prefix+'speed'){
+    if ( message.content == prefix+'rgz'){
        
         try{
 }catch(e){
