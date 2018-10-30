@@ -24,6 +24,25 @@ const sql = require("sqlite");
 ,ti={}  
 ,spee={}; 
 
+client.on('ready', function(){ // Leaked by [ @Fr3on Gamer#9338 ]
+    var ms = 30000 ;
+    var setGame = [`RuggerZ | Ur Wlc 🌹 `,` -help 💖 `];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`https://www.twitch.tv/ninja`);
+    }, ms);30000
+
+});
+
+
 client.on('message', message => {
  var prefix = "-";
 if (message.content.startsWith(prefix + 'help')) {
