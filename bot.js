@@ -101,7 +101,7 @@ if (message.content.startsWith(prefix + 'help')) {
     💠 -rps => Rock & Paper & Scissors | لعبة حجر ورقة مقص
     💠 -slots => Game Of Fruits | لعبة الفواكه
     💠 -marry @user => لعبة الزواج
-    💠 -speed => لعبة سرعة كتابة 
+    💠 -rgz => لعبة سرعة كتابة 
     💠 -لعبة فكك <= فكك
     💠 -لعبة عواصم <= عواصم
     💠 -البوت يعطيك نصائح <= هل تعلم
@@ -411,7 +411,7 @@ client.on('message', msg => {
 
  
 
-const prefix = ">"
+const prefix = "-"
 client.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(prefix)) return undefined;
@@ -458,7 +458,7 @@ client.on('message', async msg => {
 			        .setDescription(`**الرجاء اختيار رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
-					.setFooter("Speed Bot")
+					.setFooter("RuggerZ Bot")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					
 					try {
@@ -597,8 +597,8 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
-const adminprefix = "-v";
-const devs = ['349616310734553088','335027415619338240'];
+const adminprefix = "r!";
+const devs = ['415595760990552065','259052979137675266'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -743,7 +743,7 @@ client.on('message', message => {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO Speed Bot`` ')
+            .setTitle('``INFO RuggerZ Bot`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``servers``', [client.guilds.size], true)
@@ -753,7 +753,7 @@ client.on('message', message => {
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
 			      .addField('``My Prefix``' , `[ - ]` , true)
 			      .addField('``My Language``' , `[ Java Script ]` , true)
-			      .setFooter('By | Elmusaui_GK and Speed')
+			      .setFooter('By | Minato')
     })
 }
 });
