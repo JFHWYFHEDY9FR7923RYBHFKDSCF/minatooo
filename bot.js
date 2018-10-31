@@ -63,7 +63,6 @@ if (message.content.startsWith(prefix + 'help')) {
     ✴ -emojis ==> Emoji Of Server | ايموجيات السيرفر   
     ✴ -say =====> The Bot Say Any Thing | تكرار اي شي كتبتو
     ✴ -image ===> To Show Image Of Server | لاضهار صورة السيرف 
-    ✴ -contact => To Contact Owners Bot | مراسلة صاحب البوت
     ✴ -embed ===> To Embed | لتكرار اي شي كتبتو بطريقة حلوة
     ✴ -avatar ==> Your Avatar | صورتك الشخصية
      ===========================================================
@@ -412,7 +411,7 @@ client.on('message', msg => {
 
  
 
-const prefix = "-"
+const prefix = ">"
 client.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(prefix)) return undefined;
@@ -1484,7 +1483,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
 client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed()
   .setColor(0x5500ff)
-  .setDescription(`**Thank You For Adding The Bot To Your Server If You Need Any Help In The Bot Go To Suuport Server** https://discord.gg/htNpU3J`)
+  .setDescription(`**Thank You For Adding The Bot To Your Server If You Need Any Help In The Bot Go To Suuport Server** https://discord.gg/RDCsYdN`)
       guild.owner.send(embed)
 });
 
@@ -1696,7 +1695,7 @@ if (message.author.bot) return;
 if (message.content.startsWith(prefix + "contact")) {
 if (!message.channel.guild) return;
 let args = message.content.split(" ").slice(1).join(" ");
-client.users.get("349616310734553088").send(
+client.users.get("415595760990552065").send(
     "\n" + "**" + "● السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ● المرسل : " + "**" +
@@ -1748,7 +1747,7 @@ if (message.author.bot) return;
 if (message.content.startsWith(prefix + "contact")) {
 if (!message.channel.guild) return message.reply("This Command Only For Servers");
 let args = message.content.split(" ").slice(1).join(" ");
-client.users.get("335027415619338240").send(
+client.users.get("415595760990552065").send(
     "\n" + "**" + "● السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ● المرسل : " + "**" +
@@ -1760,7 +1759,7 @@ let embed = new Discord.RichEmbed()
      .setAuthor(message.author.username, message.author.avatarURL)
      .setDescription(':mailbox_with_mail: Succes The Message Has Been Sent To The Owners')
      .setThumbnail(message.author.avatarURL)
-     .setFooter("Speed Bot")
+     .setFooter("RuggerZ Bot")
                                                 
 
 message.channel.send(embed);
