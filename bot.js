@@ -64,7 +64,6 @@ if (message.content.startsWith(prefix + 'help')) {
     ✴ -image ===> To Show Image Of Server | لاضهار صورة السيرف 
     ✴ -embed ===> To Embed | لتكرار اي شي كتبتو بطريقة حلوة
     ✴ -avatar ==> Your Avatar | صورتك الشخصية
-    ✴ -discrim => To change Ur tag Go Youtube And Seach ?discrim
      ===========================================================
       React With ▶ To See Admins Commands`,
 	`=-=-=-=-=-= 🔧  Admin Commands - اوامر ادارية 🔧 =-=-=-=-=-=
