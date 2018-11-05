@@ -1911,7 +1911,7 @@ client.on('message', message => {
 });
 
 client.on('message', message = {
-    if(message.content === 'Ruggerz ') {
+    if(message.content === 'Ruggerz🌹');
         message.channel.send('Is Here ');
     }
 });
