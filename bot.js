@@ -1910,12 +1910,6 @@ client.on('message', message => {
 
 });
 
-client.on('message', message = {
-    if(message.content === 'Ruggerz🌹');
-        message.channel.send('Is Here ');
-    }
-});
-
 client.on("message", message => {
     var prefix = "-" // البرفكس تقدر تغيره 
     if (!message.content.startsWith(prefix)) return;
