@@ -1814,6 +1814,12 @@ client.on("message", async message => {
   }
   });
 
+client.on('message', message => { // Leaked by [ @Fr3on Gamer#9338 ]
+    if (message.content === 'ruggerz') {
+    	message.reply(' **TheBest ✨** ');
+  	}
+});
+
 hero.on('message',async message => {
   if(message.author.bot) return;
   if(message.channel.type === 'dm') return;
@@ -1910,15 +1916,15 @@ client.on('message', message => {
 
 });
 
-client.on("message", message => {
-    var prefix = "-" // البرفكس تقدر تغيره 
+client.on("message", message => { // Leaked by [ @Fr3on Gamer#9338 ]
+
     if (!message.content.startsWith(prefix)) return;
       let command = message.content.split(" ")[0];
       command = command.slice(prefix.length);
         if(command === "skin") {
                 const args = message.content.split(" ").slice(1).join(" ")
-        if (!args) return message.channel.send(" write the name of skin ");
-        const image = new Discord.Attachment(https://minotar.net/armor/body/${args}, "skin.png");
+        if (!args) return message.channel.send("** اكتب اسم سكنك . **");
+        const image = new Discord.Attachment(`https://minotar.net/armor/body/${args}`, "skin.png");
     message.channel.send(image)
         }
     });
