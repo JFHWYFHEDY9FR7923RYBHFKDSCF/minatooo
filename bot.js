@@ -1820,42 +1820,13 @@ client.on('message', message => { // Leaked by [ @Fr3on Gamer#9338 ]
   	}
 });
 
-  if(message.author.bot) return;
-  if(message.channel.type === 'dm') return;
-  let args = message.content.split(' ');
-  let tag;
-  if(args[0] === `${prefix}discrim`) {
-    if(args[1]) {
-      let discrim = Array.from(args[1]);
-      if(isNaN(args[1])) return message.channel.send(`- \`${message.author.username}\`, يجب ان تتكون هذه الخانة من ارقام وليس احرف`);
-      if(discrim.length !== 4) return message.channel.send(`- \`${message.author.username}\`, يجب ان يكون التاق مكون من 4 ارقام`);
-
-      tag = discrim.map(r => r.toString()).join('');
-      console.log(tag);
-      if(hero.users.filter(f => f.discriminator === tag).size === 0) return message.channel.send(`- \`${message.author.username}\`, لا يوجد احد بهذا التاق`);
-      let iLD = new Discord.RichEmbed()
-      .setAuthor(message.author.username, message.author.avatarURL)
-      .setDescription(hero.users.filter(f => f.discriminator === tag).map(r => r.username).slice(0, 10).join('\n'))
-      .setFooter('By: xYouseeF\'₁₁ || Roýale.#0001');
-      message.channel.send(iLD);
-    } else if(!args[1]) {
-      tag = message.author.discriminator;
-      if(hero.users.filter(f => f.discriminator === tag).size === 0) return message.channel.send(`- \`${message.author.username}\`, لا يوجد احد بهذا التاق`);
-      let L4U = new Discord.RichEmbed()
-      .setAuthor(message.author.username, message.author.avatarURL)
-      .setDescription(hero.users.filter(f => f.discriminator === tag).map(r => r.username).slice(0, 10).join('\n'))
-      .setFooter('By: xYouseeF\'₁₁ || Roýale.#0001');
-      message.channel.send(L4U);
-    }
-  }
-});
 
 client.on('message',async message => {
   let args = message.content.split(" ").slice(1).join(" ");
   let role = message.guild.roles.find('name',args) || message.guild.roles.get(args);
 
 
-  if(message.content.startsWith(prefix + "gRole")) {
+  if(message.content.startsWith(prefix + "grole")) {
     if(!args) return message.reply('اكتب اسم الرتبة');
     if(!role) return message.reply('هذه الرتبة غير موجودة');
     let iQp = new Discord.RichEmbed()
@@ -1940,7 +1911,7 @@ if (message.content.startsWith(prefix + 'setgame')) {
 } 
 
 if (message.content.startsWith(prefix + 'setstream')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/v5bz");
+  client.user.setGame(argresult, "https://www.twitch.tv/Ninja");
      console.log('test' + argresult);
     message.channel.sendMessage(`Streaming: **${argresult}`)
 } 
