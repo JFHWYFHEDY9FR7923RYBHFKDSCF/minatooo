@@ -1820,7 +1820,6 @@ client.on('message', message => { // Leaked by [ @Fr3on Gamer#9338 ]
   	}
 });
 
-hero.on('message',async message => {
   if(message.author.bot) return;
   if(message.channel.type === 'dm') return;
   let args = message.content.split(' ');
