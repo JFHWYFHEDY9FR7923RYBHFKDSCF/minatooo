@@ -1922,6 +1922,40 @@ client.on('message',message =>{
     }
   });
 
+client.on('message', message => {
+    if (message.content === 'هاي') {
+        message.reply('♪ هــأايات أطلـَـق ولكــم☆');
+      }
+});
+
+
+
+
+client.on('message', message => {
+    if (message.content === '....') {
+        message.reply('♪أطلـَـق من نقط, يلــبى بس ☆');
+      }
+});
+
+
+client.on('message', message => {
+    if (message.content === '...') {
+        message.reply('♪أطلـَـق من نقط, يلــبى بس ☆');
+      }
+});
+
+
+client.on('message', message => {
+    if (message.content === '..') {
+        message.reply('♪أطلـَـق من نقط, يلــبى بس ☆');
+      }
+});
+
+client.on('message', message => {
+    if (message.content === '.') {
+        message.reply('♪أطلـَـق من نقط, يلــبى بس ☆');
+      }
+});
 
 
 
