@@ -66,6 +66,7 @@ client.on('ready', function(){ // Leaked by [ @Fr3on Gamer#9338 ]
      ✴ -invites ==> Your invites | كم دعوة سوية
      ✴ -ticket ==> Private chat | ينشئ لك رووم يمكن يشوفها غير الستاف
      ✴ -topinv ==> Top Invites | اكثر الاشخاص الي ينشرو السيرفر
+     ✴ -grole @role ==> role info | معلومات عن الرول
      ===========================================================
        React With ▶ To See Admins Commands`,
  	`=-=-=-=-=-= 🔧  Admin Commands - اوامر ادارية 🔧 =-=-=-=-=-=
@@ -92,6 +93,7 @@ client.on('ready', function(){ // Leaked by [ @Fr3on Gamer#9338 ]
      ❖ -ccolors <number> => Create Colors | ينشا لك الوان مع كم الوان تبي
      ❖ -kv @user => Voice Kick | يطرد شخص من الرووم
      ❖ -vonline => Create Channel Voice Online | يسوي رووم فويس اونلاين
+     ❖ -bans  ==> ban list | الاشخاص الي تبندو
       ===========================================================
        React With ▶ To See Games Commands`,
  	`=-=-=-=-=-= 🎯  Games Commands - اوامر الالعاب 🎯 =-=-=-=-=-=
@@ -1982,6 +1984,15 @@ client.on('message',async message => {
     message.channel.send(iQp);
   }
 });
+
+client.on('message', message => {
+    if (message.content.startsWith("-bans")) {
+        message.guild.fetchBans()
+        .then(bans => message.channel.send(`${bans.size} عدد اشخاص المبندة من السيرفر `))
+  .catch(console.error);
+}
+});
+
 
 
 
