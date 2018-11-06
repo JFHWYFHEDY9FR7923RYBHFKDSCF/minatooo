@@ -1724,6 +1724,19 @@ client.on('ready', function(){ // Leaked by [ @Fr3on Gamer#9338 ]
          
    }
  });
+
+client.on("message", message => {
+    var prefix = "-"
+    if (!message.content.startsWith(prefix)) return;
+      let command = message.content.split(" ")[0];
+      command = command.slice(prefix.length);
+        if(command === "skin") {
+                const args = message.content.split(" ").slice(1).join(" ")
+        if (!args) return message.channel.send("** Type your skin name **");
+        const image = new Discord.Attachment(`https://visage.surgeplay.com/full/256/${args}`, "skin.png");
+    message.channel.send(image)
+        }
+    });
    
  client.on("message", message => {
      var prefix = "-";
