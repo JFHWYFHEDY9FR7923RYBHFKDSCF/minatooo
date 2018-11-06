@@ -27,8 +27,7 @@
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setGame(` =help | Legend System ✨ `,"https://www.twitch.tv/S-F`);
-     }, ms);30000
- });
+
 
  client.on('message', message => {
   var prefix = "-";
