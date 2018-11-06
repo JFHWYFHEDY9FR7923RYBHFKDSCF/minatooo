@@ -21,7 +21,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
  const dateFormat = require('dateformat'); 
  const pretty = require('pretty-ms') 
-const prefix = '-';
+ const prefix = "-";
 
 client.on('ready', function(){ // Leaked by [ @Fr3on Gamer#9338 ]
     var ms = 30000 ;
@@ -1788,65 +1788,5 @@ client.on("message", message => {
      });
     }
 });
-
-client.on('message',async message => {
-  let args = message.content.split(" ").slice(1).join(" ");
-  let role = message.guild.roles.find('name',args) || message.guild.roles.get(args);
-
-
-  if(message.content.startsWith(prefix + "grole")) {
-    if(!args) return message.reply('اكتب اسم الرتبة');
-    if(!role) return message.reply('هذه الرتبة غير موجودة');
-    let iQp = new Discord.RichEmbed()
-    .setAuthor(message.author.tag,message.author.avatarURL)
-    .setTitle(message.guild.name)
-    .setThumbnail(message.guild.iconURL)
-    .addField('- اسم الرتبة',role.name,true)
-    .addField('- اي دي الرتبة',role.id,true)
-    .addField('- تم انشاء الرتبة',role.createdAt.toLocaleString(),true)
-    .addField('- لون الرتبة',role.hexColor,true)
-    .addField('- عدد الاعضاء الذي لديهم نفس الرتبة',role.members.size,true)
-    .addField('- مركز الرتبة بين كل الرتب',role.position - message.guild.roles.size,true)
-    .addField('- خصائص الرتبة',role.permissions,true)
-    .setFooter(message.author.tag,message.author.avatarURL);
-
-    message.channel.send(iQp);
-  }
-});
-
-
-client.on("message", message => { // Leaked by [ @Fr3on Gamer#9338 ]
-
-    if (!message.content.startsWith(prefix)) return;
-      let command = message.content.split(" ")[0];
-      command = command.slice(prefix.length);
-        if(command === "skin") {
-                const args = message.content.split(" ").slice(1).join(" ")
-        if (!args) return message.channel.send("** اكتب اسم سكنك . **");
-        const image = new Discord.Attachment(`https://minotar.net/armor/body/${args}`, "skin.png");
-    message.channel.send(image)
-        }
-    });
-
-client.on("message", async message => {
-    if(message.content.startsWith(prefix + "join")) {
-        if(message.author.id === "415595760990552065") {
-        
-      let args = message.content.split(" ").slice(1).join(" ");
-        if(!args) {
-          return message.channel.send("**يرجــى تحديـد روم صوتــي مـع الآمـر ء .**");
-        }
-          let room = message.guild.channels.find(a => a.name.includes(args));
-            room.join() .then(() => {
-              message.channel.send(`**تـم تثبيــت البـوت فـي روم , \`${room.name}\`**`) .then((m) => {
-                m.delete(5000);
-              });
-            });
-              
-    } else {
-      return message.channel.send("**آنــت لست مؤهــل لآستخـدآم هذا الآمــر ء .**");
-    }
-  }
-  });
 
 client.login(process.env.BOT_TOKEN);
