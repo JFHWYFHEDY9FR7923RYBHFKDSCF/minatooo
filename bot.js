@@ -62,6 +62,8 @@ client.on('ready', function(){ // Leaked by [ @Fr3on Gamer#9338 ]
      ✴ -image ===> To Show Image Of Server | لاضهار صورة السيرف 
      ✴ -embed ===> To Embed | لتكرار اي شي كتبتو بطريقة حلوة
      ✴ -avatar ==> Your Avatar | صورتك الشخصية
+     ✴ -invites ==> Your invites | كم دعوة سوية
+     ✴ -short ==> short link | اختصار الروابط
      ===========================================================
        React With ▶ To See Admins Commands`,
  	`=-=-=-=-=-= 🔧  Admin Commands - اوامر ادارية 🔧 =-=-=-=-=-=
@@ -1798,6 +1800,24 @@ return;
 }
 
 });
+
+client.on('message', message => { 
+	var prefix = "-";
+ let args = message.content.split(' ').slice(1);
+    if(message.content.startsWith(prefix + 'short')) {
+    if(!message.channel.guild) return;  
+
+        googl.setKey('AIzaSyC2Z2mZ_nZTcSvh3QvIyrmOIFP6Ra6co6w');
+        googl.getKey();
+        googl.shorten(args.join(' ')).then(shorturl => {
+            message.channel.send(''+shorturl)
+        }).catch(e=>{
+            console.log(e.message);
+            message.channel.send('Error!');
+        });
+}
+});
+
 
 
    
