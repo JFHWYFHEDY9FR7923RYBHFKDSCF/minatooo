@@ -21,7 +21,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
  const dateFormat = require('dateformat'); 
  const pretty = require('pretty-ms') 
-const prefix = '.';
+const prefix = '-';
 ,ti={}  
 ,spee={}; 
 
@@ -618,8 +618,6 @@ if(!args[0]) return message.reply('Write Some Things');
 }
 });
 
-client.on('message', message => {
-var prefix = "-";
 client.on('message', message => { // Leaked by [ @Fr3on Gamer#9338 ]
    if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'bc')) {
@@ -1761,6 +1759,38 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
   }
 });
 
+client.on("message", message => {
+    var prefix = "-";
+    const command = message.content.split(" ")[0];
+
+    if(command == prefix+"kv"){
+
+        if (!message.guild.member(message.author).hasPermission('MOVE_MEMBERS') || !message.guild.member(message.author).hasPermission('ADMINISTRATOR')) {
+            return message.reply('you do not have permission to perform this action!');
+        }
+
+        var member = message.guild.members.get(message.mentions.users.array()[0].id);
+        if(!message.mentions.users){
+            message.reply("please mention the member")
+            return;
+        }
+
+    if(!member.voiceChannel){
+    message.reply("i can't include voice channel for member!")
+    return;
+    }
+              message.guild.createChannel('voicekick', 'voice').then(c => {
+                member.setVoiceChannel(c).then(() => {
+                    c.delete(305).catch(console.log)
+        
+
+
+    
+      });
+     });
+    }
+});
+
 client.on('message',async message => {
   let args = message.content.split(" ").slice(1).join(" ");
   let role = message.guild.roles.find('name',args) || message.guild.roles.get(args);
@@ -1799,39 +1829,6 @@ client.on("message", message => { // Leaked by [ @Fr3on Gamer#9338 ]
     message.channel.send(image)
         }
     });
-
-
-client.on("message", message => {
-    var prefix = "-";
-    const command = message.content.split(" ")[0];
-
-    if(command == prefix+"kv"){
-
-        if (!message.guild.member(message.author).hasPermission('MOVE_MEMBERS') || !message.guild.member(message.author).hasPermission('ADMINISTRATOR')) {
-            return message.reply('you do not have permission to perform this action!');
-        }
-
-        var member = message.guild.members.get(message.mentions.users.array()[0].id);
-        if(!message.mentions.users){
-            message.reply("please mention the member")
-            return;
-        }
-
-    if(!member.voiceChannel){
-    message.reply("i can't include voice channel for member!")
-    return;
-    }
-              message.guild.createChannel('voicekick', 'voice').then(c => {
-                member.setVoiceChannel(c).then(() => {
-                    c.delete(305).catch(console.log)
-        
-
-
-    
-      });
-     });
-    }
-});
 
 client.on("message", async message => {
     if(message.content.startsWith(prefix + "join")) {
