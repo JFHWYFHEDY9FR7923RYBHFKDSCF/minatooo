@@ -617,6 +617,8 @@ if(!args[0]) return message.reply('Write Some Things');
 }
 });
 
+client.on('message', message => {
+var prefix = "-";
 client.on('message', message => { // Leaked by [ @Fr3on Gamer#9338 ]
    if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'bc')) {
