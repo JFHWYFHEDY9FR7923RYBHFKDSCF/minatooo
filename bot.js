@@ -1993,10 +1993,6 @@ client.on('message', message => {
 }
 });
 
-client.on('ready', () => {
-    client.channels.get("509411405393559561").join();
-    }); 
-
 
 
 
