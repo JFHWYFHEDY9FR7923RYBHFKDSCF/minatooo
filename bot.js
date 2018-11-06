@@ -1993,27 +1993,10 @@ client.on('message', message => {
 }
 });
 
-client.on("message", async message => {
-    var prefix = "-";
-    if(message.content.startsWith(prefix + "join")) {
-        if(message.author.id === "415595760990552065") {
-        
-      let args = message.content.split(" ").slice(1).join(" ");
-        if(!args) {
-          return message.channel.send("**يرجــى تحديـد روم صوتــي مـع الآمـر ء .**");
-        }
-          let room = message.guild.channels.find(a => a.name.includes(args));
-            room.join() .then(() => {
-              message.channel.send(`**تـم تثبيــت البـوت فـي روم , \`${room.name}\`**`) .then((m) => {
-                m.delete(5000);
-              });
-            });
-              
-    } else {
-      return message.channel.send("**آنــت لست مؤهــل لآستخـدآم هذا الآمــر ء .**");
-    }
-  }
-  });
+client.on('ready', () => {
+    client.channels.get("509411405393559561").join();
+    }); 
+
 
 
 
