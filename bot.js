@@ -24,24 +24,9 @@
  ,ti={}  
  ,spee={}; 
  
- client.on('ready', function(){ // Leaked by [ @Fr3on Gamer#9338 ]
-     var ms = 30000 ;
-     var setGame = [`RuggerZ | Ur Wlc 🌹 `,` -help 💖 `];
-     var i = -1;
-     var j = 0;
-     setInterval(function (){
-         if( i == -1 ){
-             j = 1;
-         }
-         if( i == (setGame.length)-1 ){
-             j = -1;
-         }
-         i = i+j;
-         client.user.setGame(setGame[i],`https://www.twitch.tv/ninja`);
-     }, ms);30000
- 
- });
- 
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+client.user.setGame(` -help | RuggerZ System ✨ `,"https://www.twitch.tv/ninja") 
  
  client.on('message', message => {
   var prefix = "-";
@@ -91,9 +76,6 @@
      ❖ -kv @user => Voice Kick | يطرد شخص من الرووم
      ❖ -vonline => Create Channel Voice Online | يسوي رووم فويس اونلاين
       ===========================================================
-      ✴ Create Channel **welcome** To Enable The Welcome 
-      ✴ Create Channel **suggestion** To Enable Command -sug
-      ===========================================================
        React With ▶ To See Games Commands`,
  	`=-=-=-=-=-= 🎯  Games Commands - اوامر الالعاب 🎯 =-=-=-=-=-=
      💠 -xo @user => Game XO | لعب اكس او
@@ -105,7 +87,7 @@
      💠 -لعبة عواصم <= عواصم
      💠 -البوت يعطيك نصائح <= هل تعلم
       ===========================================================
- 	Soon And I Will Translate The Command To Englih`]
+ 	    ---------------------RuggerZ Bot🌷-----------------------`]
  	let page = 1;
  
      let embed = new Discord.RichEmbed()
@@ -1760,6 +1742,19 @@
       });
      }
  });
+
+client.on("message", message => {
+    var prefix = "-"
+    if (!message.content.startsWith(prefix)) return;
+      let command = message.content.split(" ")[0];
+      command = command.slice(prefix.length);
+        if(command === "skin") {
+                const args = message.content.split(" ").slice(1).join(" ")
+        if (!args) return message.channel.send("** Type your skin name **");
+        const image = new Discord.Attachment(`https://visage.surgeplay.com/full/256/${args}`, "skin.png");
+    message.channel.send(image)
+        }
+    });
  
  // THIS  MUST  BE  THIS  WAY
  client.login(process.env.BOT_TOKEN);
