@@ -26,7 +26,7 @@ const sql = require("sqlite");
 
 client.on('ready', function(){ // Leaked by [ @Fr3on Gamer#9338 ]
     var ms = 30000 ;
-    var setGame = [`RuggerZ | Ur Wlc 🌹 `,` -help 💖 `];
+    var setGame = [`RuggerZ | 🐉 `,` -help 🐲 `];
     var i = -1;
     var j = 0;
     setInterval(function (){
