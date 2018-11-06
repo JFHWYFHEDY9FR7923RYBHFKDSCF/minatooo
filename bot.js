@@ -1743,5 +1743,7 @@ client.user.setGame(` -help | RuggerZ System ✨ `,"https://www.twitch.tv/ninja"
      }
  });
 
- // THIS  MUST  BE  THIS  WAY
- client.login(process.env.BOT_TOKEN);
+
+
+
+client.login(process.env.BOT_TOKEN);
