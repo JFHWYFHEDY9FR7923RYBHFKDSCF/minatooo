@@ -1880,10 +1880,4 @@ client.on("message", async message => {
   }
   });
 
-client.on('message', message => { // Leaked by [ @Fr3on Gamer#9338 ]
-    if (message.content === 'ruggerz') {
-    	message.reply(' **TheBest ✨** ');
-  	}
-});
-
 client.login(process.env.BOT_TOKEN);
